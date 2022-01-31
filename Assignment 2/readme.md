@@ -1,0 +1,1 @@
+For this week the homework mostly felt like a review. With that being said I was little confused on the console.log along with what script.js because I'm not exactly sure what I was supposed to see happen. I also couldn't figure out how to get just bullet points instead of numbers under my categories.

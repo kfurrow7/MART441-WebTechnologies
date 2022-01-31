@@ -1,0 +1,11 @@
+/* This is the file, "font.css." */
+@font-face {
+  font-family: 'FiraSans';
+  src: url('../fonts/FiraSans-Regular.ttf)') format('opentype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FireSans';
+  src: url('../fonts/FiraSans-Bold.ttf') format('opentype');
+  font-weight: 700;
+}
