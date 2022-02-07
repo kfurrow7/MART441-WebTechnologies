@@ -1,0 +1,1 @@
+For this week I thought it was kind of fun to created a story with clicks and I think the hardest part for me was keeping track of what comes next after you click in the html, so I went back and forth a lot. Also, still a little confused on what the DOM does, but other than that I liked this assignment.
