@@ -1,0 +1,1 @@
+I kind of struggled this week. I had a hard time getting three images to work and I felt the more I tried to then change things I started to get more confused which was a little frustrating. I think I had a good idea as far as the story line I wanted to portray, but just didn't come out the way I wanted. Other than that I liked this assignment.

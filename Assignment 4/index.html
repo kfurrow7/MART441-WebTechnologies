@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Tie the knot</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <img src="wedding5.jpg" height="800" width="600">
+    <br>
+    <h1>Time to tie the knot! Time to do some planning!</h1>
+
+
+    <div id="question">
+    <br>
+       The big day will be on September 5th!
+        <br>
+        We are going to have to figure out what the couple wants for their special day.
+        <br>
+       The first thing we have to figure out is if the couple wants an indoor or outdoor wedding.
+    </div>
+
+        <br>
+        <input type="text" size="30" id="choice" value="Please enter Outdoor or Indoor">
+        <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+        <input type="text" size="30" id="choice2" value="Enter Tropical or Mountain" style="display:none">
+        <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
+
+        <input type="text" size="30" id="choice3" value="Enter yes or no."  style="display:none">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
+
+    </body>
+
+
+    <script>
+           function getChoice1()
+           {
+               var myChoice = document.getElementById("choice").value;
+               var myQuestion = document.getElementById("question");
+               if(myChoice === "Outdoor")
+               {
+                   document.getElementById("choice").style.display="none";
+                   document.getElementById("btnSubmit").style.display="none";
+
+                   document.getElementById("choice2").style.display="block";
+                   document.getElementById("btnSubmit2").style.display="block";
+
+
+                   myQuestion.innerHTML = "Wonderful! Will it be more on the tropical side or mountain side?";
+               }
+               else if(myChoice === "Indoor")
+               {
+                   document.getElementById("choice").style.display="none";
+                   document.getElementById("btnSubmit").style.display="none";
+
+                   document.getElementById("choice3").style.display="block";
+                   document.getElementById("btnSubmit3").style.display="block";
+                   myQuestion.innerHTML = "Perfect! Does it need to be inside a church?";
+
+               }
+               else
+               {
+                   myQuestion.innerHTML = "Whoops, something went wrong.";
+               }
+
+           }
+           function getChoice2()
+           {
+               var answer = document.getElementById("choice2").value;
+               var myQuestion = document.getElementById("question");
+               if(answer === "Tropical")
+               {
+                   document.getElementById("mainImage").src = "wedding 2.jpg"
+                   myQuestion.innerHTML = "Tropical weddings have some of the best views!";
+               }
+               else if(answer === "Mountain")
+               {
+                   myQuestion.innerHTML = "Fantastic choice!";
+               }
+           }
+
+           function getChoice3()
+           {
+               var answer = document.getElementById("choice3").value;
+               var myQuestion = document.getElementById("question");
+               if(answer === "yes")
+               {
+                   document.getElementById("mainImage").src = "wedding3.jpg"
+                   myQuestion.innerHTML = "I definitely have a few in mind!";
+               }
+               else if(answer === "no")
+               {
+                   myQuestion.innerHTML = "We can certainly do that.";
+               }
+           }
+       </script>
+
+    </html>
