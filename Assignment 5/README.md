@@ -1,0 +1,1 @@
+If I'm being honest I definitely read only part of the directions and saw that we had to create a memory game, so I did more than we had to by accident. I also used many resources with figuring out how to create this memory game. It was quite difficult but the tutorials I had watched made it a little bit easier. The game was kind of fun when it was all finsihed. 
