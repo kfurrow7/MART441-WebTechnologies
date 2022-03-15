@@ -1,0 +1,1 @@
+For this assignment, I couldn't get my click to work to show my other artwork descriptions. This might be a tiny detail I couldn't quite catch. With that being said, it was fun to look into all the different types of artwork around social justice.
