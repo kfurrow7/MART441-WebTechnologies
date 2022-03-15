@@ -1,26 +1,62 @@
+// let's create an empty array. We will add to this later
+var myViewFinderArray = new Array();
 var imageNames = ["image1", "image2", "image3", "image4"];
-var blankImagePath = "images/front2.jpg";
-var firstNumber = -1;
-var secondNumber = -1;
-var score = 0;
-var allFound = 0;
-var player = {"firstname":"", "lastname":"", "age":0, "score":0};
 
-var actualImages = new Array();
-
-function printBlanks()
+// this is the main ViewFinder class
+class ViewFinder
 {
-    createRandomImageArray();
-    for(var i = 0; i < imageNames.length; i++)
+    // the constructor requires only one title, the description, imagePath, etc.
+    // we will create multiple objects from this class
+    constructor(title)
     {
-        document.getElementById(imageNames[i]).src= blankImagePath;
+        this.title = title;
     }
+
+    // this just returns the title concatenated with the string "Title"
+    // keep in mind only one return statement can exist in a function
+    toString()
+    {
+        return "Title: " + this.title;
+    }
+
+    // this is the property theTitle which returns the title as well only the title
+    get theTitle()
+    {
+        return this.title;
+    }
+
+}
+
+// this function is called in the body of the HTML page so that the objects are created and added to the
+// array myViewFinderArray
+function initializeArray()
+{
+    // create the first object from the class ViewFinder
+    var myViewFinder = new ViewFinder("Donna Bassin");
+    var img = document.createElement("img");
+   img.src = "images/SJpic.jpg";
+    var myViewFinder1 = new ViewFinder("A really angry tiger");
+    // add the first object to the array
+    myViewFinderArray.push(myViewFinder);
+    // add the second object to the array
+    myViewFinderArray.push(myViewFinder1);
+
+}
+
+// this function gets an object from the array and puts it into the element with the id title
+function accessInformation()
+{
+    // get a random number
+    var randomNumber = Math.floor(Math.random() * myViewFinderArray.length);
+    // get a random object from the array
+    // calling the toString, but we could have gotten the property theTitle as well
+    document.getElementById("title").innerHTML = myViewFinderArray[randomNumber].toString();
 
 }
 
 function createRandomImageArray()
 {
-    var actualImagePath = ["images/lama.jpg", "images/cat.jpeg"];
+    var actualImagePath = ["images/SJpic1.jpg", "images/SJpic2.webp"];
 
     var count = [0,0];
 
@@ -35,84 +71,4 @@ function createRandomImageArray()
             count[randomNumber] = count[randomNumber] + 1;
         }
     }
-}
-
-function flipImage(number)
-{
-
-
-    if(firstNumber >= 0)
-    {
-        secondNumber = number;
-        document.getElementById(imageNames[number]).src = actualImages[secondNumber];
-
-    }
-    else if(firstNumber < 0)
-    {
-        firstNumber = number;
-        document.getElementById(imageNames[firstNumber]).src= actualImages[firstNumber];
-
-    }
-
-
-    if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
-    {
-        score++;
-        setTimeout(imagesDisappear, 1000);
-    }
-
-    else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
-    {
-        score++;
-        allFound++;
-
-        firstNumber = -1;
-        secondNumber = -1;
-        if(allFound == actualImages.length/2)
-        {
-            player.score = score;
-            localStorage.setItem("playerInfo", JSON.stringify(player));
-            window.location = "index.html";
-        }
-    }
-}
-
-function imagesDisappear()
-{
-
-    console.log(firstNumber);
-    document.getElementById(imageNames[firstNumber]).src = blankImagePath;
-    document.getElementById(imageNames[secondNumber]).src = blankImagePath;
-    firstNumber = -1;
-    secondNumber = -1;
-}
-
-
-function addToPlayer()
-{
-    var firstName = document.getElementById("txtFirstName").value;
-    var lastName = document.getElementById("txtLastName").value;
-    var age = document.getElementById("txtAge").value;
-
-    player.firstname = firstName;
-    player.lastname = lastName;
-    player.age = age;
-    localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "index.html";
-}
-
-
-function playerInfo()
-{
-    var playerInformation = localStorage.getItem("playerInfo");
-    player = JSON.parse(playerInformation);
-    var str = "Name: " + player.firstname + " " + player.lastname + "<br>" +
-    "Age: " + player.age + "<br>" +
-    "Score: " + player.score;
-    if(document.getElementById("endInformation") != null)
-    {
-        document.getElementById("endInformation").innerHTML = str;
-    }
-
-
 }
