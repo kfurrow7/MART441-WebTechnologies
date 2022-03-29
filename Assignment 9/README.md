@@ -1,0 +1,1 @@
+For this assignment I watched a tutorial on youtube along with looked at the sources on the course website and I'm not really sure where I went wrong with my data set. I am wondering if I am setting up the homeworks wrong, but it all seems very complicated when I am doing the homeworks just because of all the materials given, it's almost harder it seems like.
