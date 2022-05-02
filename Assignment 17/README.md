@@ -1,0 +1,1 @@
+So I downloaded node.js, but really can't seem to find where it is on my laptop because it's not in my downloads or anything and I have tried to download it a few times. But I'm pretty sure I did my htmls correctly since it was working on my computer.

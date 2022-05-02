@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>Node.js</title>
+      <style>
+         body{
+            background-color: #AB8775  ;
+         }
+      </style>
+      <script>
+         function refreshPage()
+         {
+            const params = new URLSearchParams(window.location.search)
+            var fName = params.get("firstName");
+            var lName = params.get("lastName");
+            var fseason = params.get("favoriteseason");
+            var refresh = params.has("norefresh");
+            if(!refresh)
+            {
+               window.location = "index2.html?firstName=" + fName + "&lastName=" + lName + "&norefresh=1" + fseason + "&favoriteseason";
+            }
+
+         }
+      </script>
+   </head>
+
+   <body onload="refreshPage();">
+     <h1>
+       That's Fantastic!
+     </h1>
+     <span>Winter, Spring, Fall, Summer</span>
+
+
+   </body>
+</html>
